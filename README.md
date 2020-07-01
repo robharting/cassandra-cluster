@@ -29,8 +29,10 @@ $ docker exec -it DSE-6_node3 bash
 
 Status cassandra from within a container:
 ```$xslt
-nodetool status
+$ nodetool status
 ```
+
+Describe keyspaces: ```cqlsh> DESC keyspaces;```
 
 Create keyspace from within a container:
 ```$xslt
@@ -61,9 +63,14 @@ DESC TABLE musics_by_genre;
 
 Put data into the table:
 ```
-NSERT INTO musics_by_genre (genre, performer, year, title) VALUES ('Rock', 'Nirvana', 1991, 'Smells Like Teen Spirit');
+INSERT INTO musics_by_genre (genre, performer, year, title) VALUES ('Rock', 'Nirvana', 1991, 'Smells Like Teen Spirit');
 ```
 
-Current keyspaces: ```cqlsh> DESC keyspaces;```
+Show data in table:
+```$xslt
+cqlsh:musicdb> SELECT * from musics_by_genre;
+```
+
+
 
 
